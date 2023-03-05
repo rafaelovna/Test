@@ -17,8 +17,8 @@ public class UserTest {
 
     @Test
     public void creatingUserObjectWithPassingTwoParametersToIt() {
-        Assertions.assertEquals("anna", out.getLogin());
-        Assertions.assertEquals("anna@mail.ru", out.getEmail());
+        Assertions.assertEquals(CORRECT_LOGIN, out.getLogin());
+        Assertions.assertEquals(CORRECT_EMAIL, out.getEmail());
 
     }
 
@@ -40,6 +40,6 @@ public class UserTest {
 
     @Test
     public void loginAndEmailAreEqual() {
-        Assertions.assertThrows(RuntimeException.class, () -> new User("anna","anna"));
+        Assertions.assertThrows(RuntimeException.class, () -> new User(CORRECT_LOGIN,CORRECT_LOGIN));
     }
 }
